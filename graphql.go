@@ -43,6 +43,10 @@ import (
 	"github.com/pkg/errors"
 )
 
+type Runner interface {
+	Run(background context.Context, req *Request, q interface{}) error
+}
+
 // Client is a client for interacting with a GraphQL API.
 type Client struct {
 	endpoint         string
